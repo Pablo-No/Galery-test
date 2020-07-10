@@ -33,10 +33,10 @@ self.addEventListener('fetch', function(event) {
     if (!response || response.status !== 200 || response.type !== 'basic') {
       return response;
     }
-
+  
     if (ENABLE_DYNAMIC_CACHING) {
       const responseToCache = response.clone();
-      const cache = await caches.open(DYNAMIC_CACHE)
+      const cache = await caches.open(CACHE_NAME)
       await cache.put(event.request, response.clone());
     }
 
