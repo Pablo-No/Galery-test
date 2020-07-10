@@ -11,6 +11,7 @@ var urlsToCache = [
   '../styles/fonts/NotoSans/NotoSans-Bold.woff2',
   '../styles/fonts/NotoSans/NotoSans-BoldItalic.woff2'
 ];
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -19,20 +20,6 @@ self.addEventListener('install', function(event) {
       })
   );
 });
-/*
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-      fetch(event.request).catch(function() {
-          caches.match(event.request).then(
-            function(response){
-              return response;
-            }
-          );
-        }
-      )
-    )
-  }
-)
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
@@ -49,4 +36,3 @@ self.addEventListener('fetch', function(event) {
       );
   );
 });
-*/
