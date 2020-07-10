@@ -6,10 +6,7 @@ var urlsToCache = [
   './assets/images/3.jpg',
   './assets/scripts/script.js',
   './assets/styles/style.css',
-  './assets/styles/fonts/NotoSans/NotoSans-Regular.woff2',
-  './assets/styles/fonts/NotoSans/NotoSans-Italic.woff2',
-  './assets/styles/fonts/NotoSans/NotoSans-Bold.woff2',
-  './assets/styles/fonts/NotoSans/NotoSans-BoldItalic.woff2'
+  './assets/styles/fonts/NotoSans/NotoSans-Regular.woff2'
 ];
 
 self.addEventListener('install', function(event) {
