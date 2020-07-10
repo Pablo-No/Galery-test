@@ -38,3 +38,23 @@ self.addEventListener('fetch', function(event) {
     )
   );
 })
+event.respondWith((async () => {
+  const cachedResponse = await caches.match(event.request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
+  const response = await fetch(event.request);
+
+  if (!response || response.status !== 200 || response.type !== 'basic') {
+    return response;
+  }
+
+  if (ENABLE_DYNAMIC_CACHING) {
+    const responseToCache = response.clone();
+    const cache = await caches.open(DYNAMIC_CACHE)
+    await cache.put(event.request, response.clone());
+  }
+
+  return response;
+})());
