@@ -3,6 +3,11 @@ var images = [
   "assets/images/2.jpg",
   "assets/images/3.jpg"
 ];
+var alt = [
+  "Sunflowers",
+  "A tree in a plain";
+  "Beach"
+]
 var previousImage = document.getElementById("previousImage");
 var nextImage = document.getElementById("nextImage");
 var slider = document.getElementById("slider");
@@ -26,6 +31,7 @@ function next() {
     num = 0;
   }
   slider.src = images[num];
+  slider.alt = alt[num];
   }
 
 function prev() {
@@ -34,4 +40,5 @@ function prev() {
     num = images.length-1;
   }
   slider.src = images[num];
+  slider.alt = alt[num];
 }
