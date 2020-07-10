@@ -5,7 +5,7 @@ var images = [
 ];
 var alt = [
   "Sunflowers",
-  "A tree in a plain";
+  "A tree in a plain",
   "Beach"
 ]
 var previousImage = document.getElementById("previousImage");
