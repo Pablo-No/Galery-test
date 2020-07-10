@@ -18,12 +18,10 @@
     </p>
     <script src="assets/scripts/script.js"></script>
     <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('assets/scripts/sw.js').then(
-          function() {
-            console.log("Service Worker Registered");
-          }
-        );
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js');
+        });
       }
     </script>
   </body>
