@@ -22,39 +22,24 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    fetch(event.request)
-      .then(function(response) {
-        caches.open(CACHE_NAME).then(function(cache) {
-          cache.put(event.request, response);
-        });
-      })
-      .catch(function() {
-          caches.match(event.request).then(function(response) {
-            return response;
-          }
-        );
-      }
-    )
-  );
-})
-event.respondWith((async () => {
-  const cachedResponse = await caches.match(event.request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
+  event.respondWith((async () => {
+    const cachedResponse = await caches.match(event.request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
 
-  const response = await fetch(event.request);
+    const response = await fetch(event.request);
 
-  if (!response || response.status !== 200 || response.type !== 'basic') {
+    if (!response || response.status !== 200 || response.type !== 'basic') {
+      return response;
+    }
+
+    if (ENABLE_DYNAMIC_CACHING) {
+      const responseToCache = response.clone();
+      const cache = await caches.open(DYNAMIC_CACHE)
+      await cache.put(event.request, response.clone());
+    }
+
     return response;
-  }
-
-  if (ENABLE_DYNAMIC_CACHING) {
-    const responseToCache = response.clone();
-    const cache = await caches.open(DYNAMIC_CACHE)
-    await cache.put(event.request, response.clone());
-  }
-
-  return response;
-})());
+  })());
+});
