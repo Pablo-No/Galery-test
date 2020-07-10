@@ -17,12 +17,14 @@
       </a>
     </p>
     <script src="./assets/scripts/script.js"></script>
-    <script>
-      if ('./serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js');
-        });
-      }
-    </script>
+    <footer>
+      <script>
+        if ('./serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('sw.js');
+          });
+        }
+      </script>
+    </footer>
   </body>
 </html>
