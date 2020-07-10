@@ -19,7 +19,7 @@ self.addEventListener('install', function(event) {
       })
   );
 });
-
+/*
 self.addEventListener('fetch', function(event) {
     event.respondWith(
       fetch(event.request).catch(function() {
@@ -33,3 +33,20 @@ self.addEventListener('fetch', function(event) {
     )
   }
 )
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch(event.request)
+      .then(function(response) {
+        caches.open(CACHE_NAME).then(function(cache) {
+          cache.put(event.request, response);
+        });
+      })
+      .catch(function() {
+        caches.match(event.request).then(function(response) {
+          return response;
+        }
+      );
+  );
+});
+*/
