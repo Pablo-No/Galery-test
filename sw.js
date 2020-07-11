@@ -4,6 +4,7 @@ var urlsToCache = [
   './assets/images/1.jpg',
   './assets/images/2.jpg',
   './assets/images/3.jpg',
+  './assets/images/icon.ico',
   './assets/scripts/script.js',
   './assets/styles/style.css',
   './assets/styles/fonts/NotoSans/NotoSans-Regular.woff2'
