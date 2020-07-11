@@ -1,0 +1,22 @@
+{
+  "name": "Gallery test",
+  "short_name": "Gallery",
+  "description": "A test gallery to try service workers and progressive web apps",
+  "icons": [
+      {
+        "src": "./assets/images/icons/icon-192.ico",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./assets/images/icons/icon-512.ico",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ],
+  "start_url": "./",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF"
+}
