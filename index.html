@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Simple photo gallery app test">
-    <meta name="theme-color" content="#000000"/>
     <title>Gallery</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="icon" href="./assets/images/icons/icon-256.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="./assets/images/icons/icon-192-no-transparent.png">
+    <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
+    <!-- Some things out of the manifest -->
+    <meta name="description" content="Simple photo gallery app test">
+    <meta name="theme-color" content="#000000"/>
+    <!-- Safari on iOS doesn't support the web app manifest so we need to specify things manually -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+    <meta name="apple-mobile-web-app-title" content="Gallery test">
+    <link rel="apple-touch-icon" href="./assets/images/icons/icon-192-no-transparent.png">
   </head>
   <body>
     <main>
