@@ -1,5 +1,6 @@
 var CACHE_NAME = 'my-offline-cache';
 var urlsToCache = [
+  './'
   './index.html',
   './assets/images/1.jpg',
   './assets/images/2.jpg',
