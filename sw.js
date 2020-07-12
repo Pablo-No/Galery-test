@@ -5,6 +5,7 @@ var urlsToCache = [
   './assets/images/1.jpg',
   './assets/images/2.jpg',
   './assets/images/3.jpg',
+  './assets/images/verified-css3.gif',
   './assets/images/icons/icon-256.ico',
   './assets/scripts/script.js',
   './assets/styles/style.css',
