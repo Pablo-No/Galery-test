@@ -12,6 +12,7 @@ var FILES_TO_CACHE = [
   './assets/styles/fonts/NotoSans/NotoSans-Regular.woff2'
 ];
 
+//Please work
 self.addEventListener('install', (evt) => {
   console.log('[ServiceWorker] Install');
   evt.waitUntil(
