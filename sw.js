@@ -1,6 +1,5 @@
 var CACHE_NAME = 'my-offline-cache';
 var FILES_TO_CACHE = [
-  './',
   './index.html',
   './assets/images/1.jpg',
   './assets/images/2.jpg',
@@ -50,7 +49,7 @@ self.addEventListener('fetch', (evt) => {
           .catch(() => {
             return caches.open(CACHE_NAME)
                 .then((cache) => {
-                  return cache.match('offline.html');
+                  return cache.match('./index.html');
                 });
           })
   );
