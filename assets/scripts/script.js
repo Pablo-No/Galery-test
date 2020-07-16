@@ -44,7 +44,7 @@ function prev() {
 }
 //Installing of the PWA on desktop
 let deferredPrompt;
-const installBtn = getElementById('install-button')
+const installBtn = document.getElementById('install-button')
 installBtn.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
